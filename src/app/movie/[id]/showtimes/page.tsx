@@ -23,7 +23,7 @@ export default async function ShowtimesPage({
   const dateOptions = Array.from({ length: 7 }, (_, i) => {
     const d = new Date();
     d.setDate(d.getDate() + i);
-    return d.toISOString().split('T')[0];
+    return d.toLocaleDateString('en-CA'); // YYYY-MM-DD in local timezone
   });
 
   const selectedDate = resolvedSearchParams.date || dateOptions[0];

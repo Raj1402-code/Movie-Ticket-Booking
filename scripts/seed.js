@@ -109,7 +109,7 @@ async function seed() {
           for (const screenId of assignedScreens) {
             const times = ['10:00:00', '14:30:00', '19:00:00'];
             for (const time of times) {
-              const start_time = `${date.toISOString().split('T')[0]} ${time}`;
+              const start_time = `${date.toLocaleDateString('en-CA')} ${time}`;
               const lang = cityLangs[Math.floor(Math.random() * cityLangs.length)];
               await client.query(
                 `INSERT INTO showtimes (movie_id, screen_id, start_time, price, language) VALUES ($1, $2, $3, $4, $5)`,
